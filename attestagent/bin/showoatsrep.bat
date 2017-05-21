@@ -1,0 +1,11 @@
+call %~dp0\setenv
+%DRIVENAME%
+
+
+RMDIR /Q /S "%ENTEGRATION_TEST_CLIENT_DIR%\oatsrep
+MKDIR "%ENTEGRATION_TEST_CLIENT_DIR%\oatsrep
+cd %ENTEGRATION_TEST_CLIENT_DIR%\oatsrep
+jar xvf %1
+
+"%OATS_VIEWING_BROWSER%" "%ENTEGRATION_TEST_CLIENT_DIR%\oatsrep\Viewer.html"
+rem copy con>1

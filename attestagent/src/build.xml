@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="AttestAgentV3-Github">
+	
+	<jar destfile="attestagent-new.jar" basedir=".">
+		<manifest>
+			<attribute name="Main-Class" value="entg.job.JobManager"/>
+		</manifest>
+	</jar>
+	
+</project> 

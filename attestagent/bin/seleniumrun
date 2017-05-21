@@ -1,0 +1,32 @@
+<project name="seleniumscriptcompile" default="runscript" basedir=".">
+
+  <!-- IMPORTANT VARIABLE HERE -->
+  <path id="class.path">
+    <fileset dir="../lib">
+      <include name="**/*.jar"/>
+      <include name="**/*.zip"/>
+    </fileset>
+  </path>
+
+  <target name="init">
+     <property name="scriptdir"   value="${script.dir}"/>
+     <property name="scriptname"   value="${script.name}"/>
+     <property name="testclassdir"   value="../test_runs/run_${runid}/common"/>
+    <tstamp/>
+  </target>
+
+  <target name="runscript" depends="compile">
+    <mkdir dir="${build.dir}/classes-ant"/>
+  </target>
+  
+  <!-- COMPILE TARGET -->
+  <target name="compile" depends="init">
+    <javac destdir="${testclassdir}" source="1.5" >
+      <src path="${script.dir}"/>
+      <classpath refid="class.path"/>
+    </javac>
+  </target>
+
+
+
+</project>
